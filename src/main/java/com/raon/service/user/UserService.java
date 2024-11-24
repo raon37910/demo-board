@@ -4,8 +4,8 @@ import com.raon.domain.auth.PasswordEncoder;
 import com.raon.domain.user.UserEntity;
 import com.raon.domain.user.UserReader;
 import com.raon.domain.user.UserWriter;
-import com.raon.controller.user.request.UserSignupRequest;
-import com.raon.exception.user.DuplicatedEmailException;
+import com.raon.support.error.BoardException;
+import com.raon.support.error.ErrorType;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -21,7 +21,7 @@ public class UserService {
 
     public UserSignupResult signUp(UserSignupInfo info) {
         if (userReader.existsByEmail(info.email())) {
-            throw new DuplicatedEmailException();
+            throw new BoardException(ErrorType.VALIDATION_ERROR);
         }
 
         final String encodedPassword = passwordEncoder.encode(info.password());
