@@ -1,0 +1,8 @@
+### 회원가입 테스트
+POST localhost:8080/users/sign-up
+Content-Type: application/json
+
+{
+  "email": "jungmini0601@gmail.com",
+  "password": "qwer1234"
+}

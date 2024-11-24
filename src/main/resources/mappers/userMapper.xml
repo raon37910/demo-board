@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.raon.mapper.UserMapper">
+    <select id="existsByEmail" resultType="boolean">
+        SELECT COUNT(id) > 0 AS user_exists
+        FROM User
+        WHERE email = #{email}
+    </select>
+    
+    <insert id="create" parameterType="com.raon.domain.user.UserEntity">
+        INSERT INTO User (email, password, createdAt, role)
+            VALUES ( #{email}, #{password}, #{createdAt}, #{role} )
+    </insert>
+</mapper>

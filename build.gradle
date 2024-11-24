@@ -25,6 +25,11 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    // MyBatis
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
+    // MySQL
+    runtimeOnly 'com.mysql:mysql-connector-j'
+    // Lombok
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
