@@ -14,6 +14,11 @@
         WHERE id = #{id}
     </update>
 
+    <delete id="delete" parameterType="Integer">
+        DELETE FROM Category
+        WHERE id = #{id}
+    </delete>
+
     <select id="findById" resultType="com.raon.domain.category.CategoryEntity">
         SELECT id, name
         FROM Category

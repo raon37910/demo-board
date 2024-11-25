@@ -27,4 +27,11 @@ public class CategoryService {
         categoryWriter.update(category.toEntity());
         return category;
     }
+
+    public void delete(Integer id) {
+        categoryReader.findById(id)
+                .orElseThrow(() -> new BoardException(ErrorType.VALIDATION_ERROR));
+
+        categoryWriter.delete(id);
+    }
 }

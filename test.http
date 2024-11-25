@@ -34,3 +34,11 @@ Content-Type: application/json
 {
   "name": "category update"
 }
+
+### 카테고리삭제
+DELETE localhost:8080/categories/1
+Content-Type: application/json
+
+{
+  "name": "category update"
+}

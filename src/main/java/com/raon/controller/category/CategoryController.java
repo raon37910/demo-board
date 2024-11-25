@@ -46,6 +46,16 @@ public class CategoryController {
         return ApiResponse.success(new UpdateCategoryResponse(category.id(), category.name()));
     }
 
+    @DeleteMapping("/{id}")
+    public ApiResponse<Void> deleteCategory(
+            @PathVariable Integer id,
+            HttpSession session
+    ) {
+        validateAdminUser(session);
+        categoryService.delete(id);
+        return ApiResponse.success(null);
+    }
+
     private UserSigninResult validateAdminUser(HttpSession session) {
         Object sessionData = session.getAttribute(LOGIN_USER);
         if (sessionData instanceof UserSigninResult signinUser) {

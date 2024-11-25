@@ -17,4 +17,8 @@ public class CategoryWriter {
     public void update(CategoryEntity categoryEntity) {
         categoryMapper.update(categoryEntity);
     }
+
+    public void delete(Integer id) {
+        categoryMapper.delete(id);
+    }
 }
