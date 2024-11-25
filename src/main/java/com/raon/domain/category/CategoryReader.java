@@ -4,17 +4,14 @@ import com.raon.mapper.CategoryMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 @Component
 @RequiredArgsConstructor
-public class CategoryWriter {
-
+public class CategoryReader {
     private final CategoryMapper categoryMapper;
 
-    public void create(CategoryEntity categoryEntity) {
-        categoryMapper.create(categoryEntity.getName());
-    }
-
-    public void update(CategoryEntity categoryEntity) {
-        categoryMapper.update(categoryEntity);
+    public Optional<CategoryEntity> findById(Integer id) {
+        return Optional.ofNullable(categoryMapper.findById(id));
     }
 }

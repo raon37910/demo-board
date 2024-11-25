@@ -7,4 +7,16 @@
     <insert id="create" parameterType="String">
         INSERT INTO Category(name) VALUES ( #{name} )
     </insert>
+
+    <update id="update" parameterType="com.raon.domain.category.CategoryEntity">
+        UPDATE Category
+        SET name = #{name}
+        WHERE id = #{id}
+    </update>
+
+    <select id="findById" resultType="com.raon.domain.category.CategoryEntity">
+        SELECT id, name
+        FROM Category
+        WHERE id = #{id}
+    </select>
 </mapper>

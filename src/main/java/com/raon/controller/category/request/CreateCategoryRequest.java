@@ -7,6 +7,6 @@ public record CreateCategoryRequest(
 ) {
 
     public Category toModel() {
-        return new Category(name);
+        return new Category(null, name);
     }
 }

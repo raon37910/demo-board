@@ -26,3 +26,11 @@ Content-Type: application/json
 {
   "name": "category1"
 }
+
+### 카테고리수정
+PUT localhost:8080/categories/1
+Content-Type: application/json
+
+{
+  "name": "category update"
+}
