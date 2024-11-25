@@ -14,4 +14,8 @@ public class UserWriter {
         userMapper.create(userEntity);
         return userEntity;
     }
+
+    public void deleteByEmail(String email) {
+        userMapper.deleteByEmail(email);
+    }
 }

@@ -1,6 +1,6 @@
 package com.raon.controller.user.request;
 
-import com.raon.service.user.UserSignupInfo;
+import com.raon.service.user.model.UserSignupInfo;
 
 public record UserSignupRequest(
         String email,

@@ -31,4 +31,9 @@ public class SHA256Encoder implements PasswordEncoder {
 
         return SHA;
     }
+
+    @Override
+    public boolean matches(String password, String encodedPassword) {
+        return encode(password).equals(encodedPassword);
+    }
 }

@@ -10,8 +10,20 @@
         WHERE email = #{email}
     </select>
     
+    <select id="findByEmail" resultType="com.raon.domain.user.UserEntity">
+        SELECT id, email, password, createdAt, role
+        FROM User
+        WHERE email = #{email};
+    </select>
+    
     <insert id="create" parameterType="com.raon.domain.user.UserEntity">
         INSERT INTO User (email, password, createdAt, role)
             VALUES ( #{email}, #{password}, #{createdAt}, #{role} )
     </insert>
+
+    <delete id="deleteByEmail" parameterType="String">
+        DELETE
+        FROM User
+        WHERE email = #{email}
+    </delete>
 </mapper>

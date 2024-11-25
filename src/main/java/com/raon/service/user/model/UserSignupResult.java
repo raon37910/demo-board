@@ -1,4 +1,4 @@
-package com.raon.service.user;
+package com.raon.service.user.model;
 
 import java.time.LocalDateTime;
 

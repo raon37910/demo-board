@@ -8,4 +8,8 @@ public interface UserMapper {
     boolean existsByEmail(String email);
 
     int create(UserEntity user);
+
+    UserEntity findByEmail(String email);
+
+    void deleteByEmail(String email);
 }

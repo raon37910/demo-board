@@ -3,6 +3,18 @@ POST localhost:8080/users/sign-up
 Content-Type: application/json
 
 {
-  "email": "jungmini0601@gmail.com",
+  "email": "test@test.com",
   "password": "qwer1234"
 }
+
+### 로그인 테스트
+POST localhost:8080/users/sign-in
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "qwer1234"
+}
+
+### 회원탈퇴
+DELETE localhost:8080/users
