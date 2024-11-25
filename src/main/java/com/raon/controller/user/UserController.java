@@ -23,7 +23,8 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
 
     private final UserService userService;
-    private static final String LOGIN_USER = "LOGIN_USER";
+    // TODO 로그인 체크 관련 기능 AOP로 분리 필요
+    public static final String LOGIN_USER = "LOGIN_USER";
 
     @PostMapping("sign-up")
     @ResponseStatus(HttpStatus.CREATED)
